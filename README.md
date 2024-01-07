@@ -8,8 +8,8 @@ npm install -g dredd
 
 ## Invoke dredd with the OpenAPI spec file
 ```bash
-syntax: dredd file.yaml SERVER_END_POINT
-dredd openapi.yaml https://reqres.in/api
+**Syntax:** dredd file.yaml SERVER_END_POINT
+**Example:** dredd openapi.yaml https://reqres.in/api
 ```
 
 ## Invoke dredd with test report
