@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 0.1.9
+servers:
+  - url: https://reqres.in/api/
+    description: Optional server description, e.g. Main (production) server
+paths:
+  /users:
+    get:
+      summary: Returns a list of users.
+      description: Optional extended description in CommonMark or HTML.
+      responses:
+        '200':
+          description: A JSON array of user names
+          content:
+            application/json; charset=utf-8:
+              schema: 
+                type: object
+    post:
+      summary: Create a new user.
+      description: Creates a new user with the given name and job.
+      requestBody:
+        required: true
+        content:
+          application/json; charset=utf-8:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                job:
+                  type: string
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  job:
+                    type: string
+                  id:
+                    type: string
+                  createdAt:
+                    type: string
+                    format: date-time
